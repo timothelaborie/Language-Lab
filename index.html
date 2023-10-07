@@ -65,7 +65,8 @@
     <script>
         $('#translation_wrapper').hide();
         // const BASE_URL = 'http://127.0.0.1:8000';
-        const BASE_URL = 'https://scraper-tool.osc-fr1.scalingo.io';
+        // const BASE_URL = 'https://scraper-tool.osc-fr1.scalingo.io';
+        const BASE_URL = 'https://vercel-server-one-xi.vercel.app/api/';
         let mediaRecorder;
         let audioChunks = [];
         let isRecording = false;
@@ -74,10 +75,10 @@
             let language = $('#language').val();
             $('#translation_wrapper').hide();
 			$.ajax({
-				url: BASE_URL + '/randomsentence',
+				url: BASE_URL,
 				method: 'POST',
 				contentType: 'application/json',
-				data: JSON.stringify({ language: language }),
+				data: JSON.stringify({ func:"randomsentence", language: language }),
 				success: function(data) {
                     console.log(data)
 					$('#sentence').text(data.translated);
@@ -112,10 +113,10 @@
                 reader.onloadend = () => {
                     let base64data = reader.result.split(',')[1];
 					$.ajax({
-						url: BASE_URL + '/speechtotext',
+						url: BASE_URL,
 						method: 'POST',
 						contentType: 'application/json',
-						data: JSON.stringify({ audio: base64data }),
+						data: JSON.stringify({ func:"speechtotext", audio: base64data }),
 						success: function(data) {
 							$('#speechtotext_response').text(data.text);
                             if(data.text.length < 1) {
@@ -123,7 +124,7 @@
                             }
 						},
 						error: function(err) {
-							alert('Error: ' + err.responseJSON.error);
+							alert('The request timed out. Please try again. The server sometimes takes a bit of time to wake up.');
 						}
 					})
                 }
@@ -148,10 +149,10 @@
                 return;
             }
 			$.ajax({
-				url: BASE_URL + '/texttospeech',
+				url: BASE_URL,
 				method: 'POST',
 				contentType: 'application/json',
-				data: JSON.stringify({ text: text }),
+				data: JSON.stringify({ func:"texttospeech", text: text }),
 				success: function(data) {
                     console.log("received audio");
 					$('#translatedAudio').attr('src', data.audio);
@@ -160,7 +161,7 @@
                     $('#translation_wrapper').show();
 				},
 				error: function(err) {
-					alert('Error: ' + err.responseJSON.error);
+					alert('The request timed out. Please try again. The server sometimes takes a bit of time to wake up.');
 				}
 			})
         }
