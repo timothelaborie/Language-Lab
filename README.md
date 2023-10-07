@@ -42,8 +42,8 @@ Deployment: Github Pages,Vercel functions, Replicate, Clarifai
 
 | Name            | Link                                   |  Contribution  |
 | --------------- | -------------------------------------- | ---------  |
-| Timothé Laborie  | [https://www.linkedin.com/in/timothe-laborie/](https://www.linkedin.com/in/timoth%C3%A9-laborie-2128171a2/)| Frontend and backend |
-| Faran Taimoor Butt | https://www.linkedin.com/in/faranbutt/ | CSS Styling |
+| Timothé Laborie  | [https://www.linkedin.com/in/timothe-laborie/](https://www.linkedin.com/in/timoth%C3%A9-laborie-2128171a2/)| Frontend and backend development |
+| Faran Taimoor Butt | https://www.linkedin.com/in/faranbutt/ | CSS Styling and cover image |
 | Dhairya Shah | https://www.linkedin.com/in/dhairya-shah/ | Slides |
 | Homan M | https://www.linkedin.com/in/homan-mirgolbabaee/ | Slides |
 
