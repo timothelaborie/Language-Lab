@@ -17,7 +17,8 @@ This app lets you practice your translation and pronounciation skills
 View the Demo [App](https://storage.googleapis.com/lablab-video-submissions/clm0rplfh0000356qz1lvzwq9/raw/submission-video-x-clm0rplfh0000356qz1lvzwq9-clm63u4qa0028356r5rduvcn3_h3qs417c7.mp4)
 
 ## Cover
-![Image](https://github.com/faranbutt/Language-Lab/blob/main/cover.png){: width="30"}
+
+<img src="https://github.com/faranbutt/Language-Lab/blob/main/cover.png" alt="Image" width="600"/>
 
 ## Technology Stack
 
