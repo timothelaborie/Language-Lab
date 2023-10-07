@@ -1,40 +1,16 @@
 <!-- PROJECT TITLE -->
   <h1 align="center">Language Lab</h1>
  <h2 2 align="center">
-    Multi-lingual translation using AI
+    Learning English Using AI
     <br />
     </h2>
 
+## Demo App URL:
+https://timothelaborie.github.io/Language-Lab/
+
 ## Application Description
 
-Begin by choosing from a vast array of languages. With a simple click on "Get random sentence", you're presented with a phrase or sentence that'll challenge your translation and pronunciation capabilities. Take a moment, translate the sentence in your mind, and then confidently speak it out loud in English using state-of-the-art microphone integration. "Did you make a mistake?" No worries. With our "Hear correct translation" feature, you can both listen to and visualize the accurate English translation, ensuring you learn and adapt. Ready for another round? Just hit "Get random sentence" and continue your linguistic adventure. Language Lab isn't just another translation app; it's your personal gateway to mastering the English language.
-## Table of Contents
-
-<details>
-<summary>List</summary>
-
-- [Application Description](#application-description)
-- [Table of Contents](#table-of-contents)
-- [Application Deployed](#demo-app-url)
-- [Project Demo](#demo)
-- [Cover](#cover)
-- [Technology Stack](#technology-stack)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [How to use the app](#how-to-use-the-app)
-- [Collaborators](#collaborators)
-- [Hackathon Link](#hackathon-link)
-- [References](#references)
-- [License](#license)
-
-</details>
-
-## Demo App URL:
-https://faranbutt.github.io/Language-Lab/
-
-## Server:
-https://scraper-tool.osc-fr1.scalingo.io
-
+This app lets you practice your translation and pronounciation skills
 
 ## Video Demo
 
@@ -45,55 +21,32 @@ View the Demo [App](https://storage.googleapis.com/lablab-video-submissions/clm0
 
 ## Technology Stack
 
-| Technology       | Description                                   |
-| ---------------- | --------------------------------------------- |
-| HTML,CSS,JAVASCRIPT      | Frontend                             |
-| Flask           | Backend framework                             |
-| Seamless M4T         |  high-quality translation model by Meta                          |
-| Clarifai            | Generative AI, NLP, and computer vision production platform |
-| Gpt3.5    | Open AI LLM                             |
-| Deployment       | Github Pages,Scalingo                                 |
+AI models: Whisper, eleven-labs speech-synthesis
 
-## Features
-
-1. Real-time Translation.
-
-2. Instant Audio Feedback
-
-3. Scalable
-
+Deployment: Github Pages,Vercel functions, Replicate, Clarifai
 
 ## Screenshots
 
 ![y2](https://github.com/faranbutt/Language-Lab/blob/main/webpage.png)
 
 
-## How to use the app
+## How to install the app locally
 
-**Step #1** - Clone the project
-
-```bash
-$ git clone https://github.com/faranbutt/Language-Lab
-```
-
-**Step #2**
-
-- To start the frontend, run: `index.html`
+- To start the frontend, open `index.html`
 
 - For Backend, Install dependencies using: `pip install -r requirements.txt`
 
-- To start the backend, run: `python server/server.py` or `python3 Backend/server/server.py`
-
-- Follow instruction given in the webpage`
+- To start the backend, run: `python server.py`
 
 ## Collaborators
 
-| Name            | Link                                   |
-| --------------- | -------------------------------------- |
-| Dhairya Shah | https://www.linkedin.com/in/dhairya-shah/ |
-| Faran Taimoor Butt | https://www.linkedin.com/in/faranbutt/ |
-| Homan M | https://www.linkedin.com/in/homan-mirgolbabaee/ |
-| Timothé Laborie  | https://github.com/timothelaborie|
+| Name            | Link                                   |  Contribution  |
+| --------------- | -------------------------------------- | ---------  |
+| Timothé Laborie  | [https://www.linkedin.com/in/timothe-laborie/](https://www.linkedin.com/in/timoth%C3%A9-laborie-2128171a2/)| Frontend and backend development |
+| Faran Taimoor Butt | https://www.linkedin.com/in/faranbutt/ | CSS Styling and cover image |
+| Dhairya Shah | https://www.linkedin.com/in/dhairya-shah/ | Slides |
+| Homan M | https://www.linkedin.com/in/homan-mirgolbabaee/ | Slides |
+
 
 
 ## Hackathon Link
