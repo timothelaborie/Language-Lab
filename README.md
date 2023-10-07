@@ -17,18 +17,13 @@ This app lets you practice your translation and pronounciation skills
 View the Demo [App](https://storage.googleapis.com/lablab-video-submissions/clm0rplfh0000356qz1lvzwq9/raw/submission-video-x-clm0rplfh0000356qz1lvzwq9-clm63u4qa0028356r5rduvcn3_h3qs417c7.mp4)
 
 ## Cover
-![y1](https://github.com/faranbutt/Language-Lab/blob/main/cover.png)
+![Image](https://github.com/faranbutt/Language-Lab/blob/main/cover.png){: width="30"}
 
 ## Technology Stack
 
 AI models: Whisper, eleven-labs speech-synthesis
 
 Deployment: Github Pages,Vercel functions, Replicate, Clarifai
-
-## Screenshots
-
-![y2](https://github.com/faranbutt/Language-Lab/blob/main/webpage.png)
-
 
 ## How to install the app locally
 
