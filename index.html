@@ -7,62 +7,75 @@
     <title>Language Learning Helper</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body style="font-family: 'Inter', sans-serif;" class="w-screen h-screen bg-gradient-to-r from-blue-500 to-orange-500">
     <div class="w-full h-full">
-       <div class="flex justify-center items-center gap-3 p-10">
-        <img src="./1.png" alt="logo"> 
-        <h1 class="text-5xl flex justify-center items-center font-bold text-blue-400"><span class="text-orange-500">Language </span> &nbsp; Lab</h1>
-    </div>
-   <div class="flex flex-col justify-center items-center"> 
-<div class="flex flex-col gap-3 items-center">
-        <div class="p-3 rounded-lg bg-orange-500">
-        <label for="language" class="text-2xl text-black font-bold text-white">Source Language:</label>
-        <select id="language" class="text-lg px-3 py-2 rounded-lg bg-blue-500 text-white font-bold">
-            <option value="german">German</option>
-            <option value="french">French</option>
-            <option value="hindi">Hindi</option>
-        </select>
+        <div class="flex justify-center items-center gap-3 p-10">
+            <img src="./1.png" alt="logo">
+            <h1 class="text-5xl flex justify-center items-center font-bold text-blue-400"><span
+                    class="text-orange-500">Language </span> &nbsp; Lab</h1>
         </div>
-<div class="flex justify-center items-center gap-2">
-	<button onclick="getRandomSentence()" class="rounded-lg bg-blue-500 px-3 py-2">Get random sentence</button><br>
-	<div id="sentence" class="bg-orange-500 rounded-lg px-3 py-2"></div><br><br><br>
-</div>
-</div>
-   <div class="text-3xl font-bold text-orange-500">Record Your &nbsp; <span class="text-blue-400">Voice</span></div>
+        <div class="flex flex-col justify-center items-center">
+            <div class="flex flex-col gap-3 items-center">
+                <div class="p-3 rounded-lg bg-orange-500">
+                    <label for="language" class="text-2xl text-black font-bold text-white">Source Language:</label>
+                    <select id="language" class="text-lg px-3 py-2 rounded-lg bg-blue-500 text-white font-bold">
+                        <option value="german">German</option>
+                        <option value="french">French</option>
+                        <option value="hindi">Hindi</option>
+                    </select>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <button onclick="getRandomSentence()" class="rounded-lg bg-blue-500 px-3 py-2">Get random
+                        sentence</button><br>
+                    <div id="sentence" class="bg-orange-500 rounded-lg px-3 py-2"></div><br><br><br>
+                </div>
+            </div>
+            <div class="text-3xl font-bold text-orange-500">Record Your &nbsp; <span class="text-blue-400">Voice</span>
+            </div>
 
-    <button onclick="toggleRecording()"><img src="./2.png" alt="record" width="100" height="100"></button><br>
-    <div class="bg-orange-400 rounded-lg p-4">
-   <span class="mr-3">Status:</span><span id="recordingStatus" class="bg-red-500 rounded-lg text-white p-3">Not Recording</span>
+            <button onclick="toggleRecording()"><img src="./2.png" alt="record" width="100" height="100"></button><br>
+            <div class="bg-orange-400 rounded-lg p-4">
+                <span class="mr-3">Status:</span><span id="recordingStatus"
+                    class="bg-red-500 rounded-lg text-white p-3">Not Recording</span>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <div
+                    class="text-5xl font-bold font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-orange-700">
+                    What the AI understood:</div>
+                <div id="speechtotext_response"></div><br><br><br>
+
+                <button onclick="playTranslation()"
+                    class="bg-blue-300 text-white font-bold rounded-lg w-40 px-3 py-2 ">Hear Correct
+                    Translation</button>
+                <div id="translation_wrapper" class="text-3xl font-bold text-orange-800">Correct translation: <span
+                        id="translation" class="text-2xl font-bold text-blue-400"></span></div>
+                <audio id="translatedAudio"></audio>
+            </div>
+
+            <div id="tutorial" class="bg-blue-500 rounded-lg border-4 border-indigo-200 border-t-indigo-500 mt-10 p-5">
+                <h2 class="font-bold flex justify-center items-center text-2xl">How to use the app</h2>
+                <ol>
+                    <li>Select a language</li>
+                    <li>Click "Get random sentence" to get a random sentence in the selected language (it may take up to
+                        15 seconds for the server to wake up)</li>
+                    <li>Translate the sentence yourself, press the toggle mic button, then say the translation out loud
+                        in english using your microphone</li>
+                    <li>Click "Hear correct translation" to see and hear the correct translation</li>
+                    <li>If you made a mistake in your translation or pronounciation, you can now learn from the solution
+                    </li>
+                    <li>Click "Get random sentence" to start again</li>
+                </ol>
+            </div>
+
+        </div>
+
     </div>
-   <div class="flex flex-col items-center justify-center"> 
-	<div class="text-5xl font-bold font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-orange-700">What the AI understood:</div>
-    <div id="speechtotext_response"></div><br><br><br>
-
-    <button onclick="playTranslation()" class="bg-blue-300 text-white font-bold rounded-lg w-40 px-3 py-2 ">Hear Correct Translation</button>
-    <div id="translation_wrapper" class="text-3xl font-bold text-orange-800">Correct translation: <span id="translation" class="text-2xl font-bold text-blue-400"></span></div>
-    <audio id="translatedAudio"></audio>
-</div>
-
-    <div id="tutorial" class="bg-blue-500 rounded-lg border-4 border-indigo-200 border-t-indigo-500 mt-10 p-5">
-        <h2 class="font-bold flex justify-center items-center text-2xl">How to use the app</h2>
-        <ol>
-            <li>Select a language</li>
-            <li>Click "Get random sentence" to get a random sentence in the selected language (it may take up to 15 seconds for the server to wake up)</li>
-            <li>Translate the sentence yourself, press the toggle mic button, then say the translation out loud in english using your microphone</li>
-            <li>Click "Hear correct translation" to see and hear the correct translation</li>
-            <li>If you made a mistake in your translation or pronounciation, you can now learn from the solution</li>
-            <li>Click "Get random sentence" to start again</li>
-        </ol>
-    </div>
-
-    </div>
-
-</div>
     <script>
         $('#translation_wrapper').hide();
         // const BASE_URL = 'http://127.0.0.1:8000';
@@ -75,20 +88,20 @@
         function getRandomSentence() {
             let language = $('#language').val();
             $('#translation_wrapper').hide();
-			$.ajax({
-				url: BASE_URL,
-				method: 'POST',
-				contentType: 'application/json',
-				data: JSON.stringify({ func:"randomsentence", language: language }),
-				success: function(data) {
+            $.ajax({
+                url: BASE_URL,
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ func: "randomsentence", language: language }),
+                success: function (data) {
                     console.log(data)
-					$('#sentence').text(data.translated);
+                    $('#sentence').text(data.translated);
                     $('#translation').text(data.original);
-				},
-				error: function(err) {
-					alert('Error: ' + err.responseJSON.error);
-				}
-			});
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseJSON.error);
+                }
+            });
         }
 
         async function toggleRecording() {
@@ -113,21 +126,21 @@
                 const reader = new FileReader();
                 reader.onloadend = () => {
                     let base64data = reader.result.split(',')[1];
-					$.ajax({
-						url: BASE_URL,
-						method: 'POST',
-						contentType: 'application/json',
-						data: JSON.stringify({ func:"speechtotext", audio: base64data }),
-						success: function(data) {
-							$('#speechtotext_response').text(data.text);
-                            if(data.text.length < 1) {
+                    $.ajax({
+                        url: BASE_URL,
+                        method: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ func: "speechtotext", audio: base64data }),
+                        success: function (data) {
+                            $('#speechtotext_response').text(data.text);
+                            if (data.text.length < 1) {
                                 alert('The speechtotext returned an empty text');
                             }
-						},
-						error: function(err) {
-							alert('The request timed out. Please try again. The server sometimes takes a bit of time to wake up.');
-						}
-					})
+                        },
+                        error: function (err) {
+                            alert('The request timed out. Please try again. The server sometimes takes a bit of time to wake up.');
+                        }
+                    })
                 }
                 reader.readAsDataURL(audioBlob);
             };
@@ -145,26 +158,57 @@
 
         function playTranslation() {
             let text = $('#translation').text();
-            if(text == ""){
+            if (text == "") {
                 alert('Get a random sentence first');
                 return;
             }
-			$.ajax({
-				url: BASE_URL,
-				method: 'POST',
-				contentType: 'application/json',
-				data: JSON.stringify({ func:"texttospeech", text: text }),
-				success: function(data) {
+            $.ajax({
+                url: BASE_URL,
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ func: "texttospeech", text: text }),
+                success: function (data) {
                     console.log("received audio");
-					$('#translatedAudio').attr('src', data.audio);
+                    $('#translatedAudio').attr('src', data.audio);
                     //play the audio
                     $('#translatedAudio')[0].play();
                     $('#translation_wrapper').show();
-				},
-				error: function(err) {
-					alert('The request timed out. Please try again. The server sometimes takes a bit of time to wake up.');
-				}
-			})
+                },
+                error: function (err) {
+                    alert('The request timed out. Please try again. The server sometimes takes a bit of time to wake up.');
+                }
+            })
+        }
+
+        $(document).ready(function () {
+            // Call the wakeUpApis function on page load
+            wakeUpApis();
+        });
+
+        function wakeUpApis() {
+            // Placeholder data for waking up the APIs
+            const placeholderData = [
+                { func: "randomsentence", language: "german" },
+                { func: "speechtotext", audio: "U29tZVBsYWNlaG9sZGVyQXVkaW9EYXRh" }, // This is just a base64 encoded string as a placeholder
+                { func: "texttospeech", text: "Hello" }
+            ];
+
+            // Loop through each placeholder data object and make a POST request
+            placeholderData.forEach(data => {
+                console.log("Waking up API with function: " + data.func);
+                $.ajax({
+                    url: BASE_URL,
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function (response) {
+                        console.log("API woken up with function: " + data.func);
+                    },
+                    error: function (err) {
+                        console.error("Error waking up API with function: " + data.func, err);
+                    }
+                });
+            });
         }
     </script>
 
